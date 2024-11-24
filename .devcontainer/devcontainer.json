@@ -1,0 +1,123 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "UPT",
+	// "dockerFile": "Dockerfile",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// "args": {
+		// 	"VARIANT": "focal"
+		// }
+	},
+
+	"remoteUser": "ubuntu", // WARN Match the username from Dockerfile
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/python:1": {
+			"installTools": true,
+			"version": "os-provided" // * Use the version of Python provided by the OS
+		},
+		// "ghcr.io/devcontainers/features/anaconda:1": { },
+		// "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+		// 	"installCudnn": false,
+		// 	"installCudnnDev": false,
+		// 	"installToolkit": true,
+		// 	"cudaVersion": "11.8", // * CUDA version
+		// 	"cudnnVersion": "8.6.0.163" // * cuDNN version
+		// },
+		// "ghcr.io/raucha/devcontainer-features/pytorch:latest": { }
+	},
+
+	"hostRequirements": {
+		"gpu": "optional"
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "/bin/bash -c 'uname -a && source ~/.bashrc && pre-commit install --install-hooks' && /bin/bash",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"bash-history": {
+			"enabled": true
+		},
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			},
+			"extensions": [
+				"jeff-hykin.better-cpp-syntax",
+				"aaron-bond.better-comments",
+				"alefragnani.Bookmarks",
+				"ms-vscode.cpptools-themes",
+				"usernamehw.errorlens",
+				"GitHub.remotehub",
+				"ms-toolsai.jupyter-keymap",
+				"PKief.material-icon-theme",
+				"IBM.output-colorizer",
+				"johnpapa.vscode-peacock",
+				"alefragnani.project-manager",
+				"KevinRose.vsc-python-indent",
+				"ms-dotnettools.vscode-dotnet-runtime",
+				"almenon.arepl",
+				"njpwerner.autodocstring",
+				"ms-python.black-formatter",
+				"ms-vscode.cpptools",
+				"jbenden.c-cpp-flylint",
+				"ms-vscode.cpptools-extension-pack",
+				"matepek.vscode-catch2-test-adapter",
+				"xaver.clang-format",
+				"twxs.cmake",
+				"josetr.cmake-language-support-vscode",
+				"ms-vscode.cmake-tools",
+				"streetsidesoftware.code-spell-checker",
+				"adpyke.codesnap",
+				"moshfeu.compare-folders",
+				"PeterSchmalfeldt.explorer-exclude",
+				"doi.fileheadercomment",
+				"mhutchie.git-graph",
+				"github.vscode-github-actions",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"GitHub.vscode-pull-request-github",
+				"eamodio.gitlens",
+				"oderwat.indent-rainbow",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"ms-toolsai.jupyter",
+				"ms-toolsai.vscode-jupyter-cell-tags",
+				"ms-toolsai.jupyter-renderers",
+				"ms-toolsai.vscode-jupyter-slideshow",
+				"ymotongpoo.licenser",
+				"yzhang.markdown-all-in-one",
+				"ms-python.vscode-pylance",
+				"ms-python.python",
+				"ms-python.debugpy",
+				"donjayamanne.python-environment-manager",
+				"njqdev.vscode-python-typehint",
+				"charliermarsh.ruff",
+				"Gruntfuggly.todo-tree",
+				"smilerobotics.urdf",
+				"redhat.vscode-xml",
+				"redhat.vscode-yaml"
+			]
+		}
+	},
+
+	// * GUI support
+	"mounts": [
+		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
+	],
+
+	"runArgs": [
+		"--net", "host",
+		"-e", "DISPLAY=:0",
+		"-e", "XAUTHORITY=/tmp/.Xauthority",
+		"-v", "${localEnv:HOME}/.Xauthority:/tmp/.Xauthority",
+		"--gpus", "all",
+		// "--shm-size", "16gb" // * Increase shared memory size
+	]
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+}

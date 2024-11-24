@@ -1,0 +1,92 @@
+{
+    "licenser.license": "AL2",
+
+    "cSpell.words": [
+        "davzucky",
+        "jbenden",
+        "raucha"
+    ],
+
+    "c-cpp-flylint.clang.enable": true,
+    "c-cpp-flylint.cppcheck.enable": true,
+    "c-cpp-flylint.flawfinder.enable": true,
+    "c-cpp-flylint.lizard.enable": true,
+
+    "c-cpp-flylint.defines": [ ],
+    "c-cpp-flylint.undefines": [ ],
+    "c-cpp-flylint.includePaths": [
+        "${workspaceFolder}/include",
+    ],
+    "c-cpp-flylint.excludeFromWorkspacePaths": [
+        "/usr/include/**",
+        "/usr/local/include/**",
+    ],
+    "c-cpp-flylint.standard": [
+        "c11",
+        "c++17"
+    ],
+    "c-cpp-flylint.cppcheck.suppressions": [
+        // "missingIncludeSystem",
+        // "constParameter",
+        "unusedFunction",
+        // "preprocessorErrorDirective",
+        // "constParameterPointer",
+        // "constVariable",
+        // "passedByValue",
+        // "knownConditionTrueFalse",
+        // "unmatchedSuppression"
+    ],
+
+    "files.associations": {
+        "*.rviz": "yaml",
+        "*.srdf": "xml",
+        "*.urdf": "xml",
+        "*.xacro": "xml",
+        "array": "cpp",
+        "atomic": "cpp",
+        "bit": "cpp",
+        "*.tcc": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "initializer_list": "cpp",
+        "iosfwd": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "numbers": "cpp",
+        "ostream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "typeinfo": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp"
+    },
+
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+}
