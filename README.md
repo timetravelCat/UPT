@@ -103,3 +103,12 @@ Special thanks to the open-source community for their invaluable resources and s
 
 ## 📞 Contact
 For any inquiries or support, please contact timetravelCat@gmail.com
+
+---
+
+## ✅ TODO
+- [ ] Automatically detect CUDA and CUDA hardware.
+- [ ] ROS2 branch, for ROS2-based packages.
+- [ ] Project documentation template.
+- [ ] Option for direct use of Docker image including all major features.
+- [ ] Add CI/CD pipeline for automated testing and deployment.
