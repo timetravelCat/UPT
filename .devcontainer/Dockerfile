@@ -33,6 +33,7 @@ RUN apt-get update -y && apt-get upgrade -y
 # WARN catch2 is not available in the ubuntu focal
 RUN apt-get install -y --no-install-recommends \
     build-essential \
+    bash-completion \
     cmake \
     python3-pip \
     python3-venv \
@@ -43,6 +44,9 @@ RUN apt-get install -y --no-install-recommends \
     cppcheck \
     catch2 \
     flawfinder
+
+# * Enable bash completion
+RUN sudo rm /etc/apt/apt.conf.d/docker-clean
 
 # * Install lizard system-wide
 RUN sudo pip install lizard pre-commit
