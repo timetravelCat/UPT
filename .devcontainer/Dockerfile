@@ -38,6 +38,7 @@ RUN apt-get install -y --no-install-recommends \
     python3-venv \
     python-is-python3 \
     clang \
+    clang-format \
     clang-tidy \
     cppcheck \
     catch2 \

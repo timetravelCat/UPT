@@ -11,6 +11,9 @@
 	},
 
 	"remoteUser": "ubuntu", // WARN Match the username from Dockerfile
+	// * Move local workspace folder to user home
+	"workspaceMount": "source=${localWorkspaceFolder},target=/home/ubuntu/${localWorkspaceFolderBasename},type=bind", // WARN Match the username from Dockerfile
+	"workspaceFolder": "/home/ubuntu/${localWorkspaceFolderBasename}", // WARN Match the username from Dockerfile
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
@@ -106,6 +109,7 @@
 
 	// * GUI support
 	"mounts": [
+		"type=bind,source=${localEnv:HOME}/.ssh,target=/home/ubuntu/.ssh,readonly", // WARN Match the username from Dockerfile
 		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached"
 	],
 
