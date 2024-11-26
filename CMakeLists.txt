@@ -86,7 +86,16 @@ target_compile_options(${PROJECT_NAME} PUBLIC
     -Woverloaded-virtual # Warn when a function declaration hides a virtual function from a base class.
     -Wlogical-op # Warn about suspicious uses of logical operators.
     -Wuseless-cast # Warn if a cast does not change the type or value.
+
     # -Werror # Treat all warnings as errors.
+)
+
+# Executable Setup
+add_executable(example_debug
+    src/example_debug.cpp
+)
+target_compile_options(example_debug PUBLIC
+    -g # Generate debug information
 )
 
 # Setup the installation

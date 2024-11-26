@@ -33,6 +33,7 @@ RUN apt-get update -y && apt-get upgrade -y
 # WARN catch2 is not available in the ubuntu focal
 RUN apt-get install -y --no-install-recommends \
     build-essential \
+    gdb \
     bash-completion \
     cmake \
     python3-pip \
