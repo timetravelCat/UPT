@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # based on https://releases.llvm.org/14.0.0/tools/clang/docs/ClangFormatStyleOptions.html
-# clang 12.0.1
+# clang 14.0.0
 
 BasedOnStyle: LLVM
 AccessModifierOffset: -4

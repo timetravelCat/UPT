@@ -13,19 +13,7 @@
 # limitations under the License.
 
 repos:
-# INFO clang-format (for c/cpp)
-- repo: https://github.com/pre-commit/mirrors-clang-format
-  rev: v14.0.0
-  hooks:
-  - id: clang-format
-
-# INFO black (for python)
-- repo: https://github.com/psf/black-pre-commit-mirror
-  rev: 24.10.0
-  hooks:
-  - id: black
-
-# # INFO pre-commit-hooks
+# INFO pre-commit-hooks
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v5.0.0
   hooks:
