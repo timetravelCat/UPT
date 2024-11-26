@@ -48,7 +48,7 @@ BreakInheritanceList: AfterColon
 BreakStringLiterals: false
 ColumnLimit: 0
 CompactNamespaces: false
-ConstructorInitializerIndentWidth: 0
+ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 2
 Cpp11BracedListStyle: true
 # EmptyLineAfterAccessModifier: Never

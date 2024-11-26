@@ -15,7 +15,7 @@
 repos:
 # INFO clang-format (for c/cpp)
 - repo: https://github.com/pre-commit/mirrors-clang-format
-  rev: v12.0.1
+  rev: v14.0.0
   hooks:
   - id: clang-format
 
