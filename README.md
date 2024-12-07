@@ -54,29 +54,48 @@ This template is designed with a primary focus on enabling individuals to set up
 
 - **Pre-Commit hooks**
 
+- **workflow by github actions**
+  - Check all [workflows](.github/workflows/)
+
 ---
 
 ## 📂 Project Structure
-    .
-    ├── .devcontainer
-    ├── .vscode
-    ├── build
-    ├── cmake
-    ├── include
-      └── ExampleProject
-        └── Version.h
-    ├── src
-      └── example_project.cpp
-    ├── test
-      └── CMakeLists.txt
-    ├── LICENSE
-    ├── .clang-format
-    ├── .gitignore
-    ├── .pre-commit-config.yaml
-    ├── LICENSE
-    ├── README.md
-    └── CMakeLists.txt
-
+    📦UPT
+    ┣ 📂.devcontainer
+    ┃ ┣ 📜Dockerfile
+    ┃ ┗ 📜devcontainer.json
+    ┣ 📂.github
+    ┃ ┗ 📂workflows
+    ┃ ┃ ┣ 📜clang-format.yml
+    ┃ ┃ ┣ 📜clang-tidy.yml
+    ┃ ┃ ┣ 📜cppcheck.yml
+    ┃ ┃ ┣ 📜flawfinder.yml
+    ┃ ┃ ┣ 📜multi-platform.yml
+    ┃ ┃ ┣ 📜python-lint.yml
+    ┃ ┃ ┗ 📜stale.yml
+    ┣ 📂.vscode
+    ┃ ┣ 📜launch.json
+    ┃ ┗ 📜settings.json
+    ┣ 📂cmake
+    ┃ ┣ 📜ExampleProjectConfig.cmake.in
+    ┃ ┣ 📜Version.h.in
+    ┃ ┣ 📜clang-tidy.cmake
+    ┃ ┗ 📜cppcheck.cmake
+    ┣ 📂include
+    ┃ ┗ 📂ExampleProject
+    ┃ ┃ ┗ 📜Version.h
+    ┣ 📂src
+    ┃ ┣ 📜example_debug.cpp
+    ┃ ┗ 📜example_project.cpp
+    ┣ 📂test
+    ┃ ┣ 📜CMakeLists.txt
+    ┃ ┗ 📜test_example.cpp
+    ┣ 📜.clang-format
+    ┣ 📜.gitignore
+    ┣ 📜.pre-commit-config.yaml
+    ┣ 📜CMakeLists.txt
+    ┣ 📜LICENSE
+    ┗ 📜README.md
 ---
 
 ## 🚀 Getting Started
