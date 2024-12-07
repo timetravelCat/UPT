@@ -81,6 +81,8 @@ This template is designed with a primary focus on enabling individuals to set up
     ┃ ┣ 📜Version.h.in
     ┃ ┣ 📜clang-tidy.cmake
     ┃ ┗ 📜cppcheck.cmake
+    ┣ 📦docs
+    ┃ ┣ 📜index.md
     ┣ 📂include
     ┃ ┗ 📂ExampleProject
     ┃ ┃ ┗ 📜Version.h
@@ -95,7 +97,8 @@ This template is designed with a primary focus on enabling individuals to set up
     ┣ 📜.pre-commit-config.yaml
     ┣ 📜CMakeLists.txt
     ┣ 📜LICENSE
-    ┗ 📜README.md
+    ┣ 📜README.md
+    ┗ 📜mkdocs.yml
 ---
 
 ## 🚀 Getting Started
@@ -128,6 +131,6 @@ For any inquiries or support, please contact timetravelCat@gmail.com
 ## ✅ TODO
 - [ ] Automatically detect CUDA and CUDA hardware.
 - [ ] ROS2 branch, for ROS2-based packages.
-- [ ] Project documentation template.
+- [x] Project documentation template (using mkdocs).
 - [ ] Option for direct use of Docker image including all major features.
 - [x] Add CI/CD pipeline for automated testing and deployment.

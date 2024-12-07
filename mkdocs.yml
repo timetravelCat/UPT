@@ -1,0 +1,10 @@
+site_name: Test docs
+site_description: "A docs test"
+site_author: "timetravelCat"
+docs_dir: docs/
+repo_name: "timetravelCat/UPT"
+repo_url: "https://github.com/timetravelCat/UPT"
+nav:
+  - Home: index.md
+theme:
+  name: "material"
