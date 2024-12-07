@@ -1,0 +1,24 @@
+# https://github.com/actions/starter-workflows/blob/main/.github/workflows/stale.yml
+
+name: stale
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "21 4 * * *"
+
+jobs:
+  stale:
+    permissions:
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/stale@v8
+        with:
+          stale-issue-label: "stale"
+          stale-pr-label: "stale"
+          days-before-stale: 90
+          days-before-close: -1
+          remove-stale-when-updated: true

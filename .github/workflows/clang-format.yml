@@ -1,0 +1,25 @@
+name: clang-format
+on:
+  pull_request:
+    branches: ["*"]
+    paths:
+      ["**.c", "**.cpp", "**.h", "**.hpp", "**.cxx", "**.hxx", "**.cc", "**.hh"]
+  push:
+    branches: ["*"]
+    paths:
+      ["**.c", "**.cpp", "**.h", "**.hpp", "**.cxx", "**.hxx", "**.cc", "**.hh"]
+
+jobs:
+  clang-format:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        path:
+          - "src"
+          - "include"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jidicula/clang-format-action@v4.14.0
+        with:
+          clang-format-version: "14"
+          check-path: ${{ matrix.path }}

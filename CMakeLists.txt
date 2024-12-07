@@ -14,6 +14,9 @@
 
 cmake_minimum_required(VERSION 3.16)
 
+# Include cmake module path
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
 include(FindPackageHandleStandardArgs)
 include(CMakeDependentOption)
 include(CheckSymbolExists)
@@ -97,6 +100,11 @@ add_executable(example_debug
 target_compile_options(example_debug PUBLIC
     -g # Generate debug information
 )
+
+# Setup sanitizers
+add_custom_target(sanitizer)
+include(cppcheck)
+include(clang-tidy)
 
 # Setup the installation
 include(GNUInstallDirs)

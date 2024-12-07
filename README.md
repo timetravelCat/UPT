@@ -111,4 +111,4 @@ For any inquiries or support, please contact timetravelCat@gmail.com
 - [ ] ROS2 branch, for ROS2-based packages.
 - [ ] Project documentation template.
 - [ ] Option for direct use of Docker image including all major features.
-- [ ] Add CI/CD pipeline for automated testing and deployment.
+- [x] Add CI/CD pipeline for automated testing and deployment.

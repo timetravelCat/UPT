@@ -1,0 +1,38 @@
+# https://github.com/actions/starter-workflows/blob/main/ci/cmake-single-platform.yml
+
+name: clang-tidy
+
+on:
+  push:
+    branches: ["*"]
+    paths:
+      ["**.c", "**.cpp", "**.h", "**.hpp", "**.cxx", "**.hxx", "**.cc", "**.hh"]
+  pull_request:
+    branches: ["*"]
+    paths:
+      ["**.c", "**.cpp", "**.h", "**.hpp", "**.cxx", "**.hxx", "**.cc", "**.hh"]
+
+jobs:
+  clang-tidy:
+    name: clang-tidy
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake clang-tidy catch2
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure CMake
+        run: cmake -B ${{github.workspace}}/build
+
+      - name: clang-tidy
+        run: cmake --build ${{github.workspace}}/build --target clang-tidy
+
+      - name: Upload clang-tidy Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: clang-tidy-results
+          path: ${{github.workspace}}/build/clang-tidy.log

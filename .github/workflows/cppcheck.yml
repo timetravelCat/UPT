@@ -1,0 +1,38 @@
+# https://github.com/actions/starter-workflows/blob/main/ci/cmake-single-platform.yml
+
+name: cppcheck
+
+on:
+  push:
+    branches: ["*"]
+    paths:
+      ["**.c", "**.cpp", "**.h", "**.hpp", "**.cxx", "**.hxx", "**.cc", "**.hh"]
+  pull_request:
+    branches: ["*"]
+    paths:
+      ["**.c", "**.cpp", "**.h", "**.hpp", "**.cxx", "**.hxx", "**.cc", "**.hh"]
+
+jobs:
+  cppcheck:
+    name: cppcheck
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake cppcheck catch2
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure CMake
+        run: cmake -B ${{github.workspace}}/build
+
+      - name: Cppcheck
+        run: cmake --build ${{github.workspace}}/build --target cppcheck
+
+      - name: Upload Cppcheck Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: cppcheck-results
+          path: ${{github.workspace}}/build/cppcheck.xml
