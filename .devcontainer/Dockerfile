@@ -74,10 +74,6 @@ RUN if id -u $USERNAME >/dev/null 2>&1; then \
 
 USER $USERNAME
 
-# * Post-installation Actions for CUDA
-RUN echo "export PATH=\${PATH}:/usr/local/cuda/bin" >> ~/.bashrc
-RUN echo "export LD_LIBRARY_PATH=\${LD_LIBRARY_PATH}:/usr/local/cuda/lib64" >> ~/.bashrc
-
 # * Setup python virtual environment
 # RUN python3 -m venv venv \
 #     && . venv/bin/activate \

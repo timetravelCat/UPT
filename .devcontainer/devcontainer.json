@@ -36,6 +36,11 @@
 		"gpu": "optional"
 	},
 
+	"remoteEnv": {
+		"PATH": "${containerEnv:PATH}:/usr/local/cuda/bin",
+		"LD_LIBRARY_PATH": "${containerEnv:LD_LIBRARY_PATH}:/usr/local/cuda/lib64"
+	},
+
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "/bin/bash -c 'uname -a && source ~/.bashrc && pre-commit install --install-hooks' && /bin/bash",
 

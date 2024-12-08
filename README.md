@@ -80,6 +80,7 @@ This template is designed with a primary focus on enabling individuals to set up
     ┃ ┣ 📜ExampleProjectConfig.cmake.in
     ┃ ┣ 📜Version.h.in
     ┃ ┣ 📜clang-tidy.cmake
+    ┃ ┣ 📜cuda.cmake
     ┃ ┗ 📜cppcheck.cmake
     ┣ 📦docs
     ┃ ┣ 📜index.md
@@ -88,7 +89,8 @@ This template is designed with a primary focus on enabling individuals to set up
     ┃ ┃ ┗ 📜Version.h
     ┣ 📂src
     ┃ ┣ 📜example_debug.cpp
-    ┃ ┗ 📜example_project.cpp
+    ┃ ┣ 📜example_project.cpp
+    ┃ ┗ 📜example_cuda.cu
     ┣ 📂test
     ┃ ┣ 📜CMakeLists.txt
     ┃ ┗ 📜test_example.cpp
@@ -110,6 +112,13 @@ This template is designed with a primary focus on enabling individuals to set up
   - Rename folder name of [***include/ExampleProject***](include)
   - Rename [***cmake/ExampleProjectConfig.cmake.in***](cmake)
 
+3. CUDA (Optional)
+  - Uncomment cuda features in [***devcontainer.json***](.devcontainer/devcontainer.json)
+
+4. Documentations via mkdocs (Optional)
+  - Check **GitHub Pages** and Select **Deploy from a branch**, Branch as **gh-pages**, **/(root)**.
+  - Check [***docs workflow***](.github/workflows/docs.yml), [***mkdocs configuration***](mkdocs.yml)
+
 ---
 
 ## 📜 License
@@ -129,7 +138,7 @@ For any inquiries or support, please contact timetravelCat@gmail.com
 ---
 
 ## ✅ TODO
-- [ ] Automatically detect CUDA and CUDA hardware.
+- [x] Automatically detect CUDA and CUDA hardware.
 - [ ] ROS2 branch, for ROS2-based packages.
 - [x] Project documentation template (using mkdocs).
 - [ ] Option for direct use of Docker image including all major features.

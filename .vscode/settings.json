@@ -20,6 +20,7 @@
     "c-cpp-flylint.excludeFromWorkspacePaths": [
         "/usr/include/**",
         "/usr/local/include/**",
+        // "/usr/local/cuda/include/**"
     ],
     "c-cpp-flylint.standard": [
         "c11",

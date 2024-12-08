@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.18)
 
 # Include cmake module path
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
@@ -45,6 +45,9 @@ cmake_dependent_option(BUILD_TESTING "Enable testing" ON "CMAKE_PROJECT_NAME STR
 
 # Set the default position-independent code option
 cmake_dependent_option(CMAKE_POSITION_INDEPENDENT_CODE "Generate position-independent code" ON "BUILD_SHARED_LIBS" OFF)
+
+# Dependencies Setup
+include(cuda)
 
 # Setup the test
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
@@ -100,6 +103,13 @@ add_executable(example_debug
 target_compile_options(example_debug PUBLIC
     -g # Generate debug information
 )
+
+# CUDA executable example
+if(CMAKE_CUDA_COMPILER)
+    add_executable(example_cuda
+        src/example_cuda.cu
+    )
+endif()
 
 # Setup sanitizers
 add_custom_target(sanitizer)
