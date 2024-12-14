@@ -21,6 +21,12 @@ if(NOT Catch2_FOUND)
     return()
 endif()
 
+set(LibCatch2 Catch2::Catch2)
+
+if(${Catch2_VERSION_MAJOR} GREATER_EQUAL 3)
+    set(LibCatch2 Catch2::Catch2WithMain)
+endif()
+
 # This is a workaround for Catch2 2.13.8
 include(Catch)
 set(CATCH_BUILD_TESTING OFF CACHE BOOL "Build Catch2's own tests" FORCE)
@@ -32,8 +38,9 @@ foreach(target ${src})
     get_filename_component(target_name ${target} NAME_WE)
     add_executable(${target_name} ${target})
     target_link_libraries(${target_name} PRIVATE
-        Catch2::Catch2 # WARN Catch2::Catch2WithMain if you are using newer version of Catch2
+        ${LibCatch2}
         ${PROJECT_NAME})
+    target_compile_definitions(${target_name} PRIVATE Catch2_VERSION_MAJOR=${Catch2_VERSION_MAJOR})
     add_test(NAME ${target_name} COMMAND ${target_name})
     catch_discover_tests(${target_name})
 endforeach(target)

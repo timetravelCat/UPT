@@ -11,8 +11,7 @@
     "c-cpp-flylint.cppcheck.enable": true,
     "c-cpp-flylint.flawfinder.enable": true,
     "c-cpp-flylint.lizard.enable": true,
-
-    "c-cpp-flylint.defines": [ ],
+    "c-cpp-flylint.defines": [ "Catch2_VERSION_MAJOR=2" ], // "NDEBUG"
     "c-cpp-flylint.undefines": [ ],
     "c-cpp-flylint.includePaths": [
         "${workspaceFolder}/include",

@@ -119,6 +119,10 @@ This template is designed with a primary focus on enabling individuals to set up
   - Check **GitHub Pages** and Select **Deploy from a branch**, Branch as **gh-pages**, **/(root)**.
   - Check [***docs workflow***](.github/workflows/docs.yml), [***mkdocs configuration***](mkdocs.yml)
 
+5. Adjust VSCode workspace settings (Optional)
+  - "c-cpp-flylint.defines"
+  - "c-cpp-flylint.standard"
+
 ---
 
 ## 📜 License

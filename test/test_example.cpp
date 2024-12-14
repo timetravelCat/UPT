@@ -12,8 +12,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do this in one cpp file
+#if defined(Catch2_VERSION_MAJOR) && Catch2_VERSION_MAJOR == 2
+#define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
+#elif defined(Catch2_VERSION_MAJOR) && Catch2_VERSION_MAJOR == 3
+#include <catch2/catch_test_macros.hpp>
+#else
+#error "Unsupported Catch2 version"
+#endif
 
 unsigned int Factorial(unsigned int number) {
     return number <= 1 ? number : Factorial(number - 1) * number;
