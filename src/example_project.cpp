@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #include <stdio.h>
-#include <ExampleProject/Version.h>
+#include <exampleproject/version.h>
 #include <memory>
 #include <vector>
 #include <iostream>

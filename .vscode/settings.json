@@ -38,6 +38,7 @@
     ],
 
     "files.associations": {
+        "*.in": "txt",
         "*.rviz": "yaml",
         "*.srdf": "xml",
         "*.urdf": "xml",

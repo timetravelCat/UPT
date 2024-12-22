@@ -50,18 +50,18 @@ cmake_dependent_option(CMAKE_POSITION_INDEPENDENT_CODE "Generate position-indepe
 include(cuda)
 
 # Setup the test
-if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
+if(BUILD_TESTING)
     include(CTest)
-
-    if(BUILD_TESTING)
-        add_subdirectory(test)
-    endif()
+    add_subdirectory(test)
 endif()
 
 # Setup the library
+string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWERCASE)
+string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPERCASE)
+
 configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/Version.h.in"
-    "${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME}/Version.h"
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake/version.h.in"
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/${PROJECT_NAME_LOWERCASE}/version.h"
     @ONLY
 )
 
