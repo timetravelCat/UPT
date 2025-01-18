@@ -73,6 +73,9 @@ add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
+
+# target_include_directories(${PROJECT_NAME} SYSTEM PUBLIC
+# ${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES})
 target_compile_options(${PROJECT_NAME} PUBLIC
     -Wall # Enable all common warnings.
     -Wextra # Enable additional warnings not covered by -Wall.

@@ -15,6 +15,7 @@
     "c-cpp-flylint.undefines": [ ],
     "c-cpp-flylint.includePaths": [
         "${workspaceFolder}/include",
+        // "/usr/local/cuda/include"
     ],
     "c-cpp-flylint.excludeFromWorkspacePaths": [
         "/usr/include/**",
@@ -28,6 +29,7 @@
     "c-cpp-flylint.cppcheck.suppressions": [
         // "missingIncludeSystem",
         // "constParameter",
+        "noExplicitConstructor",
         "unusedFunction",
         // "preprocessorErrorDirective",
         // "constParameterPointer",
@@ -90,4 +92,5 @@
     },
 
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    // "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
 }
